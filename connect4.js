@@ -102,7 +102,11 @@ function handleClick(evt) {
   }
 
   // check for tie
-  if(board.every(row => row.every(cell => cell))) {
+  if(board.every(function(row){
+    row.every(function(cell){
+      cell
+    })
+  })) {
     return endGame("Tie!!")
   }
 
