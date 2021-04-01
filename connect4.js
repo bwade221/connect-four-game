@@ -1,9 +1,3 @@
-/** Connect Four
- *
- * Player 1 and 2 alternate turns. On each turn, a piece is dropped down a
- * column until a player gets four-in-a-row (horiz, vert, or diag) or until
- * board fills (tie)
- */
 
 const WIDTH = 7;
 const HEIGHT = 6;
@@ -22,11 +16,9 @@ function makeBoard() {
   
 }
 
-/** makeHtmlBoard: make HTML table and row of column tops. */
-
 function makeHtmlBoard() {
   const htmlBoard = document.getElementById("board")
-  // TODO: add comment for this code
+  // makes the top row of the board, and adds the event listener to make it functional
   let top = document.createElement("tr");
   top.setAttribute("id", "column-top");
   top.addEventListener("click", handleClick);
@@ -38,7 +30,7 @@ function makeHtmlBoard() {
   }
   htmlBoard.append(top);
 
-  // TODO: add comment for this code
+  // makes each row of the board, and appends it to the dom
   for (let y = 0; y < HEIGHT; y++) {
     const row = document.createElement("tr");
     for (let x = 0; x < WIDTH; x++) {
